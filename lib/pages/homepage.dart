@@ -1,4 +1,5 @@
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'confirm_dialog.dart';
 import 'package:budget_management_system/controller/database_help.dart';
@@ -21,6 +22,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _imagePaths=[
+    'assets/Rupee.png',
+    'assets/expensesimage.jpg',
+    'assets/piglet.png'
+  ];
   DbHelper dbHelper= DbHelper();
   late SharedPreferences preferences;
   late Box box;
@@ -164,6 +170,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+
+
       body: FutureBuilder<List<TransactionModal>>(
         future: fetch(),
         builder: (context, snapshot) {
@@ -189,19 +197,33 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Column(
                         children: [
+                          // Container(
+                          //   decoration: BoxDecoration(
+                          //     borderRadius: BorderRadius.circular(60.0),
+                          //     color: Colors.white,
+                          //     ),
+                          //
+                          // padding: EdgeInsets.all(2.0),
+                          //   child: CircleAvatar(
+                          //     maxRadius: 45.0,
+                          //     child: Image.asset(
+                          //         "assets/Rupee.png",
+                          //     width: 80.0,
+                          //     ),
+                          //   ),
+                          // ),
                           Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(60.0),
-                              color: Colors.white,
-                              ),
-
-                          padding: EdgeInsets.all(2.0),
-                            child: CircleAvatar(
-                              maxRadius: 45.0,
-                              child: Image.asset(
-                                  "assets/Rupee.png",
-                              width: 80.0,
-                              ),
+                            child: CarouselSlider(
+                              items:_imagePaths.map((imagepath){
+                                return Container(
+                                  margin: EdgeInsets.all(4.0),
+                                  width: MediaQuery.of(context).size.width,
+                                    color: Colors.transparent,
+                                    child: Image.asset(imagepath,
+                                    ),
+                                );
+                              }).toList(),
+                              options: CarouselOptions(autoPlay: true),
                             ),
                           ),
                         ],
@@ -297,7 +319,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Padding(padding: const EdgeInsets.all(12.0),
-                  child: Text("Expenses",
+                  child: Text("Expenses Graph",
                     style: TextStyle(
                       fontSize: 32,
                       color: Colors.black,

@@ -1,4 +1,5 @@
 import 'package:budget_management_system/controller/database_help.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:budget_management_system/static.dart' as Static;
 import 'package:flutter/services.dart';
