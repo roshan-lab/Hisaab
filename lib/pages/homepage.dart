@@ -41,23 +41,6 @@ class _HomePageState extends State<HomePage> {
 
   List<FlSpot> getPlotPoints(List<TransactionModal> entireData){
     dataSet =[];
-    // entireData.forEach((key, value) {
-    //   if(value['type'] == "SPENT" && (value['date'] as DateTime).month==today.month){
-    //     dataSet.add(FlSpot(
-    //         (value['date'] as DateTime).day.toDouble(),
-    //         (value['amount'] as int).toDouble(),
-    //
-    //     ),
-    //     );
-    //    // print(entireData);
-    //   }
-    //
-    //   //   print(entireData);
-    //
-    // }
-    // );
-
-
     List tempDataSet =[];
     for(TransactionModal data in entireData){
       if(data.date.month ==today.month && data.type=="SPENT"){
@@ -647,7 +630,7 @@ Widget incomeTile(int value, String note, DateTime date,BuildContext context, in
             children: [
               Row(
                 children: [
-                  Icon(Icons.arrow_circle_down_outlined,
+                  Icon(Icons.arrow_circle_up_outlined,
                     size: 28.0,
                     color: Colors.greenAccent,
                   ),

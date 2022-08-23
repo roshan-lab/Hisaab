@@ -91,18 +91,6 @@ class _AddTransactionState extends State<AddTransaction> {
             )
               ,),
           ),
-
-
-          // Text(
-          //     "Add Transaction",
-          //
-          // textAlign: TextAlign.center,
-          // style: TextStyle(
-          //   color: Colors.teal.shade800,
-          //   fontSize: 32.0,
-          //   fontWeight: FontWeight.bold,
-          // ),
-          // ),
           SizedBox(height: 10.0),
           Row(
             children: [
@@ -167,9 +155,6 @@ class _AddTransactionState extends State<AddTransaction> {
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Details/ Comments",
-
-                    // border: InputBorder.none,
-
                   ),
                   style: TextStyle(
                     fontSize: 25.0,

@@ -1,0 +1,26 @@
+{
+  "name": "budget_management_system",
+  "version": "1.0.0",
+  "description": "A new Flutter project.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roshan-lab/Hisaab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roshan-lab/Hisaab/issues"
+  },
+  "homepage": "https://github.com/roshan-lab/Hisaab#readme",
+  "dependencies": {
+    "ws": "^8.8.1"
+  }
+}
